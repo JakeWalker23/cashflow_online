@@ -1,6 +1,3 @@
-/**
- * Created by cristian.jora on 04.11.2016.
- */
 const express = require('express');
 const serveStatic = require("serve-static")
 const path = require('path');
