@@ -1,15 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h1>Cashflow online. Sign up for £20</h1>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>    
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank">vue-devtools</a></li>
-    </ul>
+    <h5>Sign up for £20</h5>
   </div>
 </template>
 

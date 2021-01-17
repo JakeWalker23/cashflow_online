@@ -1,7 +1,8 @@
 <template>
   <div class="about">
     <Navigation/>
-    <h1>Welcome to Cashflow online. Sign up for free here.</h1>
+    <h3>Welcome to Cashflow online. </h3>
+    <h3 class="welcome">Sign up for free here.</h3>
     <Upload/>
     <Footer/>
   </div>
@@ -10,13 +11,11 @@
 <script>
 import Upload from '@/components/Upload.vue'
 import Footer from '@/components/Footer.vue'
-import Navigation from '@/components/Navigation.vue'
 
 
 export default {
   name: 'dashboard',
   components: {
-    Navigation,
     Upload,
     Footer,
   }
@@ -26,6 +25,10 @@ export default {
 <style>
   * {
   margin: 0px;  
+  }
+
+  .welcome {
+    margin-bottom: 16px;
   }
 </style>
 

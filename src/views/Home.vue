@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App deployed to heroku"/>
+    <HelloWorld msg="Welcome to Cashflow Online."/>
   </div>
 </template>
 

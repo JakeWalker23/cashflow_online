@@ -1,7 +1,6 @@
 <template>
   <div class="footer">
     <h3 class="text-color">Growth Mindset</h3>
-    <h3 class="text-color">Cashflow is coming!</h3>    
   </div>
 </template>
 
