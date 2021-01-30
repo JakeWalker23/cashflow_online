@@ -3,8 +3,6 @@
     <h1 class="title">Upload to Cashflow</h1>
     <h3 class="sign-up"><a href="www.google.co.uk">Sign up here</a></h3>
   <div>
-    <button> See cashflow
-    </button>
     </div>
   </div>
 </template>
@@ -18,13 +16,13 @@ export default {
 
 <style>
 .title {
-  font-size: 32px;
-  color: #42b983;
-  margin-bottom: 16px;
+  font-size: 32px; /*Use REMS for fonts*/
+  color: #42b983; /*Save this as a variable in tailwind.*/
+  margin-bottom: 16px; 
 }
 
 .sign-up {
-  margin-bottom: 16px;
+  margin-bottom: 16px; /*Set up variables for spacing*/
 }
 
 
