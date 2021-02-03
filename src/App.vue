@@ -1,12 +1,17 @@
 <template>
   <div id="app">
+    <Header />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/dashboard">Dashboard</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+<script>
+import Header from "@/components/Header.vue";
+export default { components: { Header } };
+</script>
 
 <style lang="scss">
 #app {

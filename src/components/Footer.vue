@@ -12,7 +12,7 @@ export default {
 
 <style>
   .footer {
-    background: rgb(24, 211, 95);
+    background: rgb(41, 196, 100);
     height: 150px;
     width: 100%;
     position: absolute;
