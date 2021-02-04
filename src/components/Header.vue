@@ -3,7 +3,7 @@
     <section class="header">
       <div class="header__logo">
         <img class="logo" src="../assets/logo.png" />
-        <p class="header__text">Cashflow Online</p>
+        <p class="header__text">CF</p>
       </div>
       <div class="header__social">
         <img class="header__social-a" src="../assets/icons/facebook.svg" />
@@ -39,20 +39,19 @@ export default {
 .header__logo {
   display: flex;
   width: 250px;
-  padding: 3px;
 }
 
 .logo {
-  margin-top: 2px;
-  height: 30px;
-  width: 30px;
+  margin-top: 12px;
+  height: 45px;
+  width: 45px;
 }
 
 .header__text {
   font-family: "Helvetica";
   font-size: 1.4rem;
   font-weight: bold;
-  margin-left: 10px;
+  margin: 10px 0 10px 0px;
   color: white;
 }
 
@@ -63,14 +62,14 @@ export default {
 }
 
 .header__social-a {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   color: white;
   padding: 5px 0px 12px 0px;
-  margin-right: 5px;
+  margin: 4px 5px 0 0 ;
 }
 
 .header__navigation-burger {
-  border: 1px solid white;
+
 }
 </style>

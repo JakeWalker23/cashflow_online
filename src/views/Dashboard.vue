@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     async getCashflow() {
-      // let url = 'http://localhost:3000/' Use for local development ... Make suyre to enable CORS too.
+      // let url = 'http://localhost:3000/' Use for local development ... Make sure to enable CORS too.
       let herokuURL = "https://cashflow-onlinee-api.herokuapp.com/";
       console.log("being called" + herokuURL);
       axios.get(herokuURL).then((response) => {
