@@ -1,0 +1,26 @@
+TODO
+
+
+[X] Add a transaction type dropdown
+
+[X] Build up request with to new cashflow endpoint
+
+    - `/api/cashflow/${type}`
+
+
+
+[ ] Fix unit tests for API
+
+Nice to have
+
+[ ] A component card for each transaction.
+
+[ ] Start thinking about responsive design
+
+[ ] Never stop thinking of ways to delight your customers.
+
+
+
+
+
+Leave 10 mins for deployment at the end. 

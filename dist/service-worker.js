@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.b417c282e8538e92f13e24e30bfcfee8.js"
+  "/precache-manifest.68a2ca4bba03b1eae522da96d719b1af.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vue-heroku-the-right-way"});
