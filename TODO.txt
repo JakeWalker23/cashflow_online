@@ -1,25 +1,15 @@
 TODO
 
 
-[ ] Add a transaction type dropdown
+[X] Add a transaction type dropdown
 
-[ ] Build up request with to new cashflow endpoint
+[X] Build up request with to new cashflow endpoint
 
-    - `/api/cashflow/{type}`
-
-
+    - `/api/cashflow/${type}`
 
 
 
-
-
-
-
-
-
-
-
-
+[ ] Fix unit tests for API
 
 Nice to have
 
