@@ -4,7 +4,7 @@
     <h3>Welcome to Cashflow online. </h3>
     <h3 class="welcome">Sign up for free here.</h3>
     <select v-model="selected">
-      <option v-for="transaction in transactions" v-bind="transaction.value">{{transaction.type}}</option>
+      <option v-for="transaction in transactions" v-bind:value="transaction.value">{{transaction.type}}</option>
     </select>
     <button @click="getCashflow()">Search</button>
     <h5>{{this.finances}}</h5>
@@ -43,17 +43,18 @@ export default {
         },
         {
           type: "Transfer",
-          value: "FPR",
+          value: "TFR",
         },
       ],
     };
   },
   methods: {
     async getCashflow() {
-      // let url = 'http://localhost:3000/' Use for local development ... Make suyre to enable CORS too.
-      let herokuURL = "https://cashflow-onlinee-api.herokuapp.com/";
-      console.log("being called" + herokuURL);
-      axios.get(herokuURL).then(response => {
+      let url = `http://localhost:3000/api/cashflow/${this.selected}`;
+        this.finances = []
+
+      // let herokuURL = "https://cashflow-onlinee-api.herokuapp.com/";
+      axios.get(url).then(response => {
         response.data.forEach(statement => {
           this.finances.push(statement);
         });
