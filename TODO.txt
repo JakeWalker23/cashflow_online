@@ -24,3 +24,6 @@ Nice to have
 
 
 Leave 10 mins for deployment at the end. 
+
+
+"postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi ",
