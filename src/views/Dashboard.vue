@@ -50,12 +50,12 @@ export default {
   },
   methods: {
     async getCashflow() {
-      // let url = `http://localhost:3000/api/cashflow/${this.selected}`;
+      let url = `http://localhost:3000/api/cashflow/${this.selected}`;
         this.finances = []
 
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}`;
       
-      axios.get(herokuURL).then(response => {
+      axios.get(url).then(response => {
         response.data.forEach(statement => {
           this.finances.push(statement);
         });
