@@ -16,7 +16,7 @@
 <script>
 import Upload from "@/components/Upload.vue";
 import Footer from "@/components/Footer.vue";
-import VueAxios from 'vue-axios';
+import axios from 'axios';
 
 export default {
   name: "dashboard",
@@ -50,12 +50,12 @@ export default {
   },
   methods: {
     async getCashflow() {
-      let url = `http://localhost:3000/api/cashflow/${this.selected}`;
+      // let url = `http://localhost:3000/api/cashflow/${this.selected}`;
         this.finances = []
 
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}`;
       
-      this.axios.get(url).then(response => {
+      this.axios.get(herokuURL).then(response => {
         response.data.forEach(statement => {
           this.finances.push(statement);
         });
