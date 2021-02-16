@@ -16,14 +16,13 @@ export default {
 
 <style>
 .title {
-  font-size: 32px; /*Use REMS for fonts*/
-  color: #42b983; /*Save this as a variable in tailwind.*/
+  font-size: 2rem;
+  color: #42b983; 
   margin-bottom: 16px; 
 }
 
 .sign-up {
-  margin-bottom: 16px; /*Set up variables for spacing*/
+  margin-bottom: 16px; 
 }
-
 
 </style>
