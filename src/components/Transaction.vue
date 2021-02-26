@@ -28,7 +28,7 @@ export default {
   width: 100%;
   color: white;
   font-size: 16px;
-  border: 2px solid #42b983;
+  border: 5px solid #42b983;
   margin-bottom: 50px;
 
   @media (min-width: 300px) {
@@ -38,7 +38,7 @@ export default {
 
   &__description {
     font-size: 32px;
-    color: #42b983
+    color: black
   }
 
   &__data {
@@ -47,7 +47,7 @@ export default {
     font-size: 32px;
     padding-top: 0px;
     margin: 0px 20px 0px 20px;
-    color: #42b983
+    color: black
   }
 }
 </style>
