@@ -62,7 +62,6 @@ export default {
     @media(max-width: 750px) {
       padding: 0;
       font-size: 1.5rem;
-      text-align: right;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -138,6 +137,5 @@ export default {
     font-weight: bold;
     margin-right: 10px;
   }
-
 }
 </style>
