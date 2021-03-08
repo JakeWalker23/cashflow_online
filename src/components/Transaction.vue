@@ -4,12 +4,18 @@
             <p>{{description}}</p>
         </div>
         <div class="transaction__data">
-            <h5>Amount:</h5>            
+          <div class="transaction__amount">
+            <p class="amount">Amount:</p>            
             <p>£{{amount}}</p>
-            <h5>Type:</h5>            
+          </div>
+          <div class="transaction__type">
+            <p class="type">Type:</p>            
             <p>{{type}}</p>
-            <h5>Date:</h5>
+          </div>
+          <div class="transaction__date">  
+            <p class="date">Date:</p>
             <p>{{date}}</p>
+          </div>
         </div>   
     </div>
 </template>
@@ -22,7 +28,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .transaction {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
   background: white;
   height: 175px;
   width: 100%;
@@ -36,18 +46,96 @@ export default {
     margin: 0 auto;
   }
 
+  @media(max-width: 750px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+
   &__description {
     font-size: 32px;
-    color: black
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media(max-width: 750px) {
+      padding: 0;
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &__data {
-    display: flex;
-    justify-content: space-between;
     font-size: 32px;
     padding-top: 0px;
     margin: 0px 20px 0px 20px;
-    color: black
+    color: black;
+
+  @media(max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-end;    
+    padding: 0;
+    font-size: 16px;
+    text-align: left;
+    max-width: 250px;
+    }
+
+  @media(min-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-end;    
+    padding: 0;
+    font-size: 20px;
+    text-align: left;
+    max-width: 250px;
+    }
+  }
+
+  &__amount {
+    display: flex;
+    
+    @media (max-width: 750px) {
+      display: flex;
+      text-align: left;
+    }
+}
+
+  &__type {
+    display: flex;
+  
+    @media (max-width: 750px) {
+      display: flex;
+      text-align: left;
+    }
+}
+
+  &__date {
+    display: flex;
+  
+    @media (max-width: 750px) {
+      display: flex;
+      text-align: left;
+      margin-left: 0;
+    }
+  }
+
+  .amount {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .type {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .date {
+    font-weight: bold;
+    margin-right: 10px;
   }
 }
 </style>
