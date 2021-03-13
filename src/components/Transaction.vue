@@ -4,10 +4,14 @@
             <p>{{description}}</p>
         </div>
         <div class="transaction__data">
-          <div class="transaction__amount">
+          <div class="transaction__amount" v-if="amountIn > amountOut">
             <p class="amount">Amount:</p>            
-            <p>£{{amount}}</p>
+            <p>£{{amountIn}}</p>
           </div>
+          <div class="transaction__amount" v-else>
+            <p class="amount">Amount:</p>            
+            <p>£{{amountOut}}</p>
+            </div>
           <div class="transaction__type">
             <p class="type">Type:</p>            
             <p>{{type}}</p>
@@ -23,7 +27,7 @@
 <script>
 export default {
   name: "transaction",
-  props: ["type", "description", "date", "amount"],
+  props: ["type", "description", "date", "amountIn", "amountOut"],
 };
 </script>
 
