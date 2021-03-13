@@ -22,7 +22,7 @@
         <p class="errorText">Please enter date in YYYY-MM-DD format</p>
     </div>
     <div class="transaction">
-      <Transaction v-for="data in this.finances" v-bind:value="data" v-bind:type="data.transaction_type" v-bind:description="data.transaction_description" v-bind:date="data.transaction_date" v-bind:amount="data.debited_amount"/>
+      <Transaction v-for="data in this.finances" v-bind:value="data" v-bind:type="data.transaction_type" v-bind:description="data.transaction_description" v-bind:date="data.transaction_date" v-bind:amountIn="data.debited_amount" v-bind:amountOut="data.credited_amount"/>
       <div v-if="this.finances.length == 0 && this.searched">
         <p>No transactions available from this search</p>
       </div>
@@ -54,15 +54,23 @@ export default {
           value: "dd",
         },
         {
-          type: "Credit",
+          type: "Payments In",
+          value: "fpi",
+        },
+        {
+          type: "Payments Out",
           value: "fpo",
+        },
+        {
+          type: "Salary",
+          value: "bp",
         },
         {
           type: "Debited",
           value: "deb",
         },
         {
-          type: "Transfer",
+          type: "Internal Transfers",
           value: "tfr",
         },
       ],
