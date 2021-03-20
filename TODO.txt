@@ -1,0 +1,17 @@
+TODO
+
+
+[X] Add cashflow calculation to UI
+
+    [ ] Add responsiveness 
+
+    [ ] Use cashflow brand theme 
+
+
+
+
+[ ] deploy UI to production
+
+[ ] Deploy API to production
+
+[ ] Upload latest transaction data 

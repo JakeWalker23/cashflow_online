@@ -5,6 +5,7 @@
       <h3>Welcome to Cashflow online. </h3>
       <h3>Sign up for free here.</h3>
     </div>
+    
     <div class="search">
       <div class="search__dropdown">
         <select  v-model="selected">
@@ -17,10 +18,16 @@
       <div class="search__button">
         <button @click="getCashflow()">Search</button>
       </div>
-    </div>    
+    </div> 
+
     <div class="error" v-if="this.errorMessage">
         <p class="errorText">Please enter date in YYYY-MM-DD format</p>
     </div>
+  <div class="cashflow" v-if="this.finances.length > 0">  
+    <div class="cashflow-calculation">
+      <h4>Cashflow: £{{this.finances[this.finances.length - 1]['cashflow'].toFixed(2)}}</h4>
+    </div>
+  </div>
     <div class="transaction">
       <Transaction v-for="data in this.finances" v-bind:value="data" v-bind:type="data.transaction_type" v-bind:description="data.transaction_description" v-bind:date="data.transaction_date" v-bind:amountIn="data.debited_amount" v-bind:amountOut="data.credited_amount"/>
       <div v-if="this.finances.length == 0 && this.searched">
@@ -83,12 +90,14 @@ export default {
       this.validateSearch(this.date)
 
       this.finances = [];
+      let url = `http://localhost:3000/api/cashflow/${this.selected}/${this.date}`
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}/${this.date}`;
 
-      axios.get(herokuURL).then(response => {
+      axios.get(url).then(response => {
         response.data.forEach(statement => {
           this.finances.push(statement);
         });
+          console.log(this.finances)        
       });
       this.searched = true
     },
@@ -166,6 +175,26 @@ export default {
       text-align: center;
       margin-bottom: 10px;
     }
+  }
+}
+
+.cashflow-calculation {
+  font-size: 1.5rem;
+  color: #42b983;
+  text-decoration: underline;     
+}
+
+.cashflow {
+  text-align: left;
+  margin-top: 20px;
+
+  @media(min-width: 1200px) {
+    border: 1px solid purple;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    max-width: 1200px;
+    font-size: 2rem;
   }
 }
 
