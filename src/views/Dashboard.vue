@@ -110,10 +110,9 @@ export default {
       this.validateSearch(this.date);
 
       this.finances = [];
-      let url = `http://localhost:3000/api/cashflow/${this.selected}/${this.date}`;
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}/${this.date}`;
 
-      axios.get(url).then((response) => {
+      axios.get(herokuURL).then((response) => {
         response.data.forEach((statement) => {
           this.finances.push(statement);
         });
