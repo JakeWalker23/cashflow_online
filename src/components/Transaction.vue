@@ -1,27 +1,27 @@
 <template>
-    <div class="transaction">
-        <div class="transaction__description">
-            <p>{{description}}</p>
-        </div>
-        <div class="transaction__data">
-          <div class="transaction__amount" v-if="amountIn > amountOut">
-            <p class="amount">Amount:</p>            
-            <p>£{{amountIn}}</p>
-          </div>
-          <div class="transaction__amount" v-else>
-            <p class="amount">Amount:</p>            
-            <p>£{{amountOut}}</p>
-            </div>
-          <div class="transaction__type">
-            <p class="type">Type:</p>            
-            <p>{{type}}</p>
-          </div>
-          <div class="transaction__date">  
-            <p class="date">Date:</p>
-            <p>{{date}}</p>
-          </div>
-        </div>   
+  <div class="transaction">
+    <div class="transaction__description">
+      <p>{{ description }}</p>
     </div>
+    <div class="transaction__data">
+      <div class="transaction__amount" v-if="amountIn > amountOut">
+        <p class="amount">Amount:</p>
+        <p class="amount-data">£{{ amountIn }}</p>
+      </div>
+      <div class="transaction__amount" v-else>
+        <p class="amount">Amount:</p>
+        <p class="amount-data">£{{ amountOut }}</p>
+      </div>
+      <div class="transaction__type">
+        <p class="type">Type:</p>
+        <p>{{ type }}</p>
+      </div>
+      <div class="transaction__date">
+        <p class="date">Date:</p>
+        <p>{{ date }}</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -32,7 +32,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .transaction {
   display: flex;
   flex-direction: row-reverse;
@@ -50,7 +49,7 @@ export default {
     margin: 0 auto;
   }
 
-  @media(max-width: 750px) {
+  @media (max-width: 750px) {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
@@ -63,7 +62,7 @@ export default {
     flex-direction: column;
     justify-content: center;
 
-    @media(max-width: 750px) {
+    @media (max-width: 750px) {
       padding: 0;
       font-size: 1.5rem;
       display: flex;
@@ -78,48 +77,48 @@ export default {
     margin: 0px 20px 0px 20px;
     color: black;
 
-  @media(max-width: 750px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-end;    
-    padding: 0;
-    font-size: 16px;
-    text-align: left;
-    max-width: 250px;
+    @media (max-width: 750px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-end;
+      padding: 0;
+      font-size: 16px;
+      text-align: left;
+      max-width: 250px;
     }
 
-  @media(min-width: 750px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-end;    
-    padding: 0;
-    font-size: 20px;
-    text-align: left;
-    max-width: 250px;
+    @media (min-width: 750px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-end;
+      padding: 0;
+      font-size: 20px;
+      text-align: left;
+      max-width: 250px;
     }
   }
 
   &__amount {
     display: flex;
-    
+
     @media (max-width: 750px) {
       display: flex;
       text-align: left;
     }
-}
+  }
 
   &__type {
     display: flex;
-  
+
     @media (max-width: 750px) {
       display: flex;
       text-align: left;
     }
-}
+  }
 
   &__date {
     display: flex;
-  
+
     @media (max-width: 750px) {
       display: flex;
       text-align: left;
@@ -130,6 +129,11 @@ export default {
   .amount {
     font-weight: bold;
     margin-right: 10px;
+    margin-top: 0px;
+  }
+
+  .amount-data {
+    margin-top: 0px;
   }
 
   .type {
