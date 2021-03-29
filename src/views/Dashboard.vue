@@ -12,7 +12,7 @@
         </select>
       </div>
       <div class="search__input">
-        <md-datepicker v-model="date">
+        <md-datepicker v-model="date" :md-model-type="String">
           <label>Select date</label>
         </md-datepicker>
       </div>
@@ -59,6 +59,7 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import Vue from 'vue'
+import 'moment'
 
 Vue.use(VueMaterial)
 
@@ -111,7 +112,8 @@ export default {
   },
   methods: {
     async getCashflow() {
-      // this.validateSearch(this.date);
+      this.validateSearch(this.date);
+        console.log(this.date)
 
       this.finances = [];
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}/${this.date}`;
@@ -124,20 +126,20 @@ export default {
       });
       this.searched = true;
     },
-    // async validateSearch(date) {
-    //   let regex = /^\d{4}-\d{2}-\d{2}$/;
+    validateSearch(date) {
+      let regex = /^\d{4}-\d{2}-\d{2}$/;
 
-    //   if (!date.match(regex)) {
-    //     this.errorMessage = true;
-    //     return;
-    //   } else {
-    //     this.errorMessage = false;
-    //   }
-    // },
+      if (!date.match(regex) || date == null) {
+        this.errorMessage = true;
+        return;
+      } else {
+        this.errorMessage = false;
+      }
+    },
   },
   computed: {
     date: function() {
-      return this.date;
+      return this.date 
     },
   },
 };
