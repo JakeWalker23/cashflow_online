@@ -1,19 +1,29 @@
 <template>
   <div class="container">
-  <h1 class="header">Cashflow</h1>
-  <h4>Cashflow helps control your finances</h4>  
-  <Login/>
-  </div>
+    <div>
+        <div class="login">
+        <h1 class="login__header">Cashflow</h1>
+        <h4>Cashflow helps you control your finances</h4>  
+        </div>
+        <Login/>
+    </div>
+  </div>  
 </template>
 
 <style lang="scss" scoped>
-.container {
-  
-}
 
-.header {
-  color: #42b983;
-  font-size: 75px;
+
+.login {
+  border: 1px solid red;
+  @media(max-width: 500px) {
+      border: 1px solid red;
+      display: flex;
+  }
+
+  &__header {
+    color: #42b983;
+    font-size: 50px;
+  }
 }
 
 </style>
