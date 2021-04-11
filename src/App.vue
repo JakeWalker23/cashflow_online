@@ -1,8 +1,9 @@
 <template>
   <div id="app">
+    <!---Make Login the default route upon page load-->
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/dashboard">Dashboard</router-link>
+      <router-link to="/">Login</router-link>  |    
+      <router-link to="/dashboard">Dashboard</router-link> 
     </div>
     <router-view/>
   </div>
@@ -27,3 +28,12 @@
   }
 }
 </style>
+<script>
+import Login from "@/components/Login.vue";
+
+export default {
+  components: {
+    Login
+  }
+}
+</script>
