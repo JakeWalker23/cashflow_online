@@ -15,7 +15,8 @@ export default new Router({
     {
       path: "/dashboard",
       name: "dashboard",
-      component: Dashboard
+      component: Dashboard,
+      authRequired: true, // This is a route gaurd. 
     }
   ]
 });
