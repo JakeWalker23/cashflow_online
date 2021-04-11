@@ -1,10 +1,6 @@
 <template>
   <div class="about">
     <Navigation />
-    <div class="welcome">
-      <h3>Welcome to Cashflow online.</h3>
-      <h3>Sign up for free here.</h3>
-    </div>
 
     <div class="search">
       <div class="search__dropdown">
@@ -111,7 +107,7 @@ export default {
 
       this.finances = [];
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}/${this.date}`;
-
+      
       axios.get(herokuURL).then((response) => {
         response.data.forEach((statement) => {
           this.finances.push(statement);
@@ -148,9 +144,6 @@ export default {
   margin-top: 10px;
 }
 
-.welcome {
-  margin-bottom: 16px;
-}
 
 .search {
   display: flex;
