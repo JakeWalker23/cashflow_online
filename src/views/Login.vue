@@ -85,7 +85,6 @@
 
 
 <script>
-import Login from "@/components/Login.vue";
 import firebase from "firebase/app";
 
 export default {

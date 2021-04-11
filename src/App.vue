@@ -18,8 +18,9 @@
 import Login from "@/components/Login.vue";
 
 export default {
-  components: {
-    Login
-  }
+    name: "login",
+    components: {
+        Login
+    }
 }
 </script>
