@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-    <Navigation />
     <div class="search">
       <div class="search__dropdown">
         <select v-model="selected">
@@ -117,7 +116,7 @@ export default {
 
       this.finances = [];
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}/${this.date}`;
-
+      
       axios.get(herokuURL).then((response) => {
         response.data.forEach((statement) => {
           this.finances.push(statement);
@@ -154,9 +153,6 @@ export default {
   margin-top: 10px;
 }
 
-.welcome {
-  margin-bottom: 16px;
-}
 
 .search {
   display: flex;
