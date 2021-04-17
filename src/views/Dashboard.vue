@@ -11,13 +11,14 @@
         </select>
       </div>
       <div class="search__input">
-        <input type="search" v-model="date" />
+        <md-datepicker v-model="date" :md-model-type="String">
+          <label>Select date</label>
+        </md-datepicker>
       </div>
       <div class="search__button">
         <button @click="getCashflow()">Search</button>
       </div>
     </div>
-
     <div class="error" v-if="this.errorMessage">
       <p class="errorText">Please enter date in YYYY-MM-DD format</p>
     </div>
@@ -53,8 +54,16 @@ import Upload from "@/components/Upload.vue";
 import Footer from "@/components/Footer.vue";
 import Transaction from "@/components/Transaction.vue";
 import axios from "axios";
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
+import Vue from 'vue'
+import 'moment'
+
+Vue.use(VueMaterial)
 
 export default {
+  name: 'LabeledDatepicker',
   name: "dashboard",
   components: {
     Footer,
@@ -64,6 +73,7 @@ export default {
     return {
       finances: [],
       selected: "dd",
+      selectedDate: null,
       date: "",
       transactions: [
         {
@@ -102,6 +112,7 @@ export default {
   methods: {
     async getCashflow() {
       this.validateSearch(this.date);
+        console.log(this.date)
 
       this.finances = [];
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}/${this.date}`;
@@ -114,10 +125,10 @@ export default {
       });
       this.searched = true;
     },
-    async validateSearch(date) {
+    validateSearch(date) {
       let regex = /^\d{4}-\d{2}-\d{2}$/;
 
-      if (!date.match(regex)) {
+      if (!date.match(regex) || date == null) {
         this.errorMessage = true;
         return;
       } else {
@@ -127,7 +138,7 @@ export default {
   },
   computed: {
     date: function() {
-      return this.date;
+      return this.date 
     },
   },
 };
@@ -156,18 +167,21 @@ export default {
 
   &__dropdown {
     margin-right: 10px;
+    margin-top: auto;    
 
     @media (max-width: 500px) {
       display: flex;
       flex-direction: column;
       text-align: center;
       margin-bottom: 10px;
+      border: 1px solid red;
     }
   }
 
   &__input {
     margin-right: 10px;
-
+    margin-top: 0 auto;    
+    
     @media (max-width: 500px) {
       display: flex;
       flex-direction: column;
@@ -178,6 +192,7 @@ export default {
 
   &__button {
     margin-right: 10px;
+    margin-top: auto;    
 
     @media (max-width: 500px) {
       display: flex;
