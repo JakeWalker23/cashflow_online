@@ -86,6 +86,7 @@
 
 <script>
 import firebase from "firebase/app";
+import Login from "@/components/Login.vue";
 
 export default {
     name: "login",
