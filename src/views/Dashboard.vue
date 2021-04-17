@@ -1,7 +1,5 @@
 <template>
   <div class="about">
-    <Navigation />
-
     <div class="search">
       <div class="search__dropdown">
         <select v-model="selected">

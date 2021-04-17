@@ -1,39 +1,26 @@
 <template>
-  <div id="app">
-    <!---Make Login the default route upon page load-->
-    <div id="nav">
-      <router-link to="/">Login</router-link>  |    
-      <router-link to="/dashboard">Dashboard</router-link> 
-    </div>
+  <div class="app">
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
+.app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+
 </style>
 <script>
 import Login from "@/components/Login.vue";
 
 export default {
-  components: {
-    Login
-  }
+    name: "login",
+    components: {
+        Login
+    }
 }
 </script>
