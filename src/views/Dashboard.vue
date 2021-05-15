@@ -50,14 +50,16 @@
 </template>
 
 <script>
+import Transaction from "@/components/Transaction.vue";
 import Upload from "@/components/Upload.vue";
 import Footer from "@/components/Footer.vue";
-import Transaction from "@/components/Transaction.vue";
-import axios from "axios";
 import VueMaterial from 'vue-material'
+import {validateSearch} from '../helpers/validateSearch.js'
+import axios from "axios";
+import Vue from 'vue'
+
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
-import Vue from 'vue'
 import 'moment'
 
 Vue.use(VueMaterial)
@@ -111,8 +113,7 @@ export default {
   },
   methods: {
     async getCashflow() {
-      this.validateSearch(this.date);
-        console.log(this.date)
+      validateSearch(this.date, this.errorMessage)
 
       this.finances = [];
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}/${this.date}`;
@@ -125,16 +126,16 @@ export default {
       });
       this.searched = true;
     },
-    validateSearch(date) {
-      let regex = /^\d{4}-\d{2}-\d{2}$/;
+    // validateSearch(date) {
+    //   let regex = /^\d{4}-\d{2}-\d{2}$/;
 
-      if (!date.match(regex) || date == null) {
-        this.errorMessage = true;
-        return;
-      } else {
-        this.errorMessage = false;
-      }
-    },
+    //   if (!date.match(regex) || date == null) {
+    //     this.errorMessage = true;
+    //     return;
+    //   } else {
+    //     this.errorMessage = false;
+    //   }
+    // },
   },
   computed: {
     date: function() {

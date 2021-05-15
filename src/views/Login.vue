@@ -101,8 +101,6 @@ export default {
   },
     methods: {
       login: function() {
-        console.log(this.email)
-        console.log(this.password)
         firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
           (user) => {
             console.log(user)
