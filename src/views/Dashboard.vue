@@ -112,7 +112,6 @@ export default {
   methods: {
     async getCashflow() {
       this.validateSearch(this.date);
-        console.log(this.date)
 
       this.finances = [];
       let herokuURL = `https://cashflow-onlinee-api.herokuapp.com/api/cashflow/${this.selected}/${this.date}`;
@@ -121,7 +120,6 @@ export default {
         response.data.forEach((statement) => {
           this.finances.push(statement);
         });
-        console.log(this.finances);
       });
       this.searched = true;
     },
